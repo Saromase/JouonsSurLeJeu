@@ -79,6 +79,13 @@
 	</div>
 	<div class="divider"></div>
 	<div class="row">
+		<h1 class="align-self-center">Mes paris sur ce match</h1>
+	</div>
+	<div class="divider">
+
+	</div>
+	<div class="row">
+		@if (count($bets) > 0)
 		<div class="col align-self-center ">
 			Team 100
 			<table class="table ">
@@ -102,13 +109,13 @@
 						<td>{{$bet->cote}}</td>
 						<td>
 							@if($datas->teams[0]->win == 'Fail' && $bet->bet_team == 100 )
-							<a href="{{route('bet-disabled', ['id'=>$bet->id])}}"><i class="fa fa-times"></i></a>
+							<a href="{{route('bet-disabled', ['id'=>$bet->id])}}"><i class="fa fa-times" alt="Désactivé"></i></a>
 							@elseif ($datas->teams[0]->win == 'Win' && $bet->bet_team == 100 )
-							<a href="{{route('bet-sell', ['id'=>$bet->id])}}"><i class="fa fa-money"></i></a>
+							<a href="{{route('bet-sell', ['id'=>$bet->id])}}"><i class="fa fa-money" alt="Encaisé"></i></a>
 							@elseif ($datas->teams[1]->win == 'Win' && $bet->bet_team == 200 )
-							<a href="{{route('bet-sell', ['id'=>$bet->id])}}"><i class="fa fa-money"></i></a>
+							<a href="{{route('bet-sell', ['id'=>$bet->id])}}"><i class="fa fa-money" alt="Encaisé"></i></a>
 							@elseif ($datas->teams[1]->win == 'Fail' && $bet->bet_team == 200 )
-							<a href="{{route('bet-disabled', ['id'=>$bet->id])}}"><i class="fa fa-times"></i></a>
+							<a href="{{route('bet-disabled', ['id'=>$bet->id])}}"><i class="fa fa-times" alt="Désactivé"></i></a>
 							@endif
 						</td>
 					</tr>
@@ -116,6 +123,11 @@
 				</tbody>
 			</table>
 		</div>
+		@else
+		<div class="col align-self-center">
+			<h3>Vous n'avez placé aucun paris sur ce match</h3>
+		</div>
+		@endif
 	</div>
 </div>
 
