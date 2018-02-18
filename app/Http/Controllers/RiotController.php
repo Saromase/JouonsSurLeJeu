@@ -9,6 +9,8 @@ use GuzzleHttp\Client;
 
 use App\RiotMatchs;
 
+use Auth;
+
 use Illuminate\Support\Facades\DB;
 
 
@@ -18,7 +20,7 @@ class RiotController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
 	{
 		$matchs = RiotMatchs::get();
@@ -49,8 +51,21 @@ class RiotController extends Controller
     		$data = RiotMatchs::getGameDatas($match->game_id,$url);
             array_push($gameDatas, $data);
         }
+
+        $userBet = DB::table('user_bets as ub')
+			->where([
+				['user_id', '=', Auth::id()],
+				['states' ,'=', 1],
+                ['game_id', '=', $gameId]
+			])
+			->join('bet_type as bt', 'ub.bet_type', '=', 'bt.id')
+			->select('ub.*', 'bt.name as bt_name')
+			->get();
+
+
         return view('riot.result', [
-            'datas' => $gameDatas[0]
+            'datas' => $gameDatas[0],
+            'bets' => $userBet
         ]);
     }
 }

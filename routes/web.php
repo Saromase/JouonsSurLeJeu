@@ -41,6 +41,7 @@ Route::prefix('bet')->group(function(){
     Route::get('/{gameId}/{type}/{betTeam}/{cote}', 'BetController@addBet')->name('bet-add');
     Route::get('/own/', 'BetController@myBets')->name('bet-own');
     Route::get('/sell/{id}', 'BetController@sellBet')->name('bet-sell');
+    Route::get('/disabled/{id}', 'BetController@disabledBet')->name('bet-disabled');
 
 });
 

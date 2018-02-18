@@ -39,7 +39,7 @@
 		@foreach($bet_type as $bet)
             <div class="col-md-3">
     			<button type="button" class="btn btn-outline-primary disabled">{{$rand = (rand(100,250) / 100)}}</button>
-                <a href="{{route('bet-add', ['type' => $bet->id, 'gameId' => $match->gameId, 'betTeam' =>  100, 'cote' => $rand])}}" style="color:#fff"><button type="button" class="btn btn-danger">Je parie</button></a>
+                <a href="{{route('bet-add', ['type' => $bet->id, 'gameId' => $match->gameId, 'betTeam' =>  100, 'cote' => $rand])}}" style="color:#fff"><button type="button" class="btn btn-primary">Je parie</button></a>
     		</div>
     		<div class="col-md-6">
     			{{ $bet->name}}
@@ -54,10 +54,19 @@
 	<hr class="featurette-divider">
     <div class="row">
         <div class="col-md-6 text-center">
-			Description (lLorem Ipsum)
+			<h2>Description du match</h2>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida nunc vel gravida sollicitudin. Sed vitae porttitor leo. Ut arcu magna, egestas vitae iaculis in, facilisis id mi. Nam iaculis ex nec sodales semper. Morbi nibh eros, lacinia sodales fermentum nec, congue a ipsum. Integer ultrices fringilla vestibulum. Integer eu velit aliquet, pulvinar nibh sit amet, hendrerit quam. Mauris euismod sem orci, vitae viverra elit gravida molestie. Nam scelerisque justo dui, id commodo lectus viverra ut. Etiam placerat vestibulum elit sit amet venenatis. Pellentesque ornare turpis bibendum mi mollis, eget finibus sapien aliquet. Donec vehicula, nibh sit amet volutpat sagittis, nisi enim eleifend dolor, vel pulvinar erat lacus id augue. </p>
 		</div>
 		<div class="col-md-6 text-center">
-			Video en direct
+			<h2>Video en direct</h2>
+            <iframe
+                src="http://player.twitch.tv/?channel=solary"
+                height="<height>"
+                width="<width>"
+                frameborder="<frameborder>"
+                scrolling="<scrolling>"
+                allowfullscreen="<allowfullscreen>">
+            </iframe>
 		</div>
     </div>
     <hr class="featurette-divider">

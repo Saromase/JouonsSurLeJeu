@@ -18,12 +18,17 @@ class BetController extends Controller
 		$this->middleware('auth');
 	}
 
+    /* States =>
+        0 => inactif
+        1 => actif
+        2 => win
+        3 => disabled
+        */
 	public function myBets()
 	{
 		$userBet = DB::table('user_bets as ub')
 			->where([
-				['user_id', '=', Auth::id()],
-				['states' ,'!=', 0]
+				['user_id', '=', Auth::id()]
 			])
 			->join('bet_type as bt', 'ub.bet_type', '=', 'bt.id')
 			->select('ub.*', 'bt.name as bt_name')
@@ -72,7 +77,7 @@ class BetController extends Controller
 		$newAmount = $HC + (10 * $userBet->cote);
 		$user->setHCoin($newAmount);
 		UserBets::where('id', '=', $id)->update([
-			'states' => 0
+			'states' => 2
 		]);
 		User::where('id', '=', Auth::id())->update([
 			'H_Coin' => $user->H_Coin
@@ -81,4 +86,15 @@ class BetController extends Controller
 		$message = 'Vous avez bien recupérer votre gain de '.(10 * $userBet->cote).' H-Coin';
 		return back()->with('success', $message);
 	}
+
+    public function disabledBet($id)
+    {
+        $user = User::where('id', '=', Auth::id())->get()->first();
+		$userBet = UserBets::where('id', '=', $id)->get()->first();
+		UserBets::where('id', '=', $id)->update([
+			'states' => 3
+		]);
+        $message = 'Votre paris à bien était désactivé';
+		return back()->with('fail', $message);
+    }
 }
