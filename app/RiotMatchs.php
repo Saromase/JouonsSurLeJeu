@@ -19,7 +19,7 @@ class RiotMatchs extends Model
 
         $url .= $gameId;
 
-        $token = 'RGAPI-ac7e2f6d-a873-48a3-af98-31f78996c7b7';
+        $token = 'RGAPI-ee6b8316-f25c-4355-a68a-1906afbff167';
 
 		$res = $client->request('GET', $url,[
 			'query' => [

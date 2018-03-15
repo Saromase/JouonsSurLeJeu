@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('/')->group(function(){
+    Route::get('/', 'PublicController@index')->name('public.welcome');
+    Route::get('/team', 'PublicController@displayTeam')->name('public.team');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

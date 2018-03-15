@@ -17,7 +17,7 @@
 <div id="app">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand" href="{{ route('public.welcome') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -26,9 +26,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('riot-index')}}">Index</a>
-                </li>
+                @if (Auth::guest())
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('riot-index')}}">Tous les matchs</a>
+                    </li>
+                @endif
                 </ul>
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
