@@ -30,7 +30,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Découvrir</h4>
                         <p class="card-text">Vous pouvez vous connectez en vous inscrivant (Aucun e-mail envoyé ni vérifié) ou utiliser un login pré-définis. <br>
-                            Login : utilisateur <br>
+                            Login : utilisateur@utilisateur.fr <br>
                             Mot de passe : utilisateur
                         </p>
                         <a href="{{route('login')}}" class="btn btn-primary">Se connecter</a>
