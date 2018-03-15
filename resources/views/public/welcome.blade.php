@@ -10,7 +10,7 @@
 
 <div class="container">
     <div class="row" style="margin: auto; margin-left: 10%">
-        <img class="img-fluid" src="{{ asset('img/presentation.png')}}" alt="Chania" width="80%">
+        <img class="img-fluid" src="{{ asset('img/presentation.png')}}" alt="Chania" width="80%" height="30%">
     </div>
     <hr class="divider">
     <div class="row">
@@ -19,7 +19,7 @@
                 <img class="card-img-top" src="{{ asset('img/hcoin_sans_etincelles.png')}}" alt="Card image" style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title">Découvrir le concept</h4>
-                    <p class="card-text">Prennez le temps de découvrir la présentation que l'on a préparer pour le jury du Hackathon</p>
+                    <p class="card-text">Prenez le temps de découvrir la présentation qu'on a préparé pour le jury du Hackathon</p>
                     <a href="{{ route('public.team')}}" class="btn btn-primary">Regarder</a>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                     <img class="card-img-top" src="{{ asset('img/hcoin_no_color_sans_etincelles.png')}}" alt="Card image" style="width:100%">
                     <div class="card-body">
                         <h4 class="card-title">Découvrir</h4>
-                        <p class="card-text">Vous pouvez vous connectez en vous inscrivant (Aucun e-mail envoyé ni vérifié) ou utiliser un login pré-définis. <br>
+                        <p class="card-text">Vous pouvez vous connecter en vous inscrivant (Aucun e-mail envoyé ni vérifié) ou utiliser un login prédéfini. <br>
                             Login : utilisateur@utilisateur.fr <br>
                             Mot de passe : utilisateur
                         </p>
