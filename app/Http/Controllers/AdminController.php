@@ -28,7 +28,7 @@ class AdminController extends Controller
 
 		$res = $client->request('GET', $url,[
 			'query' => [
-				'token' => '0Aq5N1JkKrPnBI757B6z4UApAnCEcq9yhqpoh_WlhtGvHlaj-EM'
+				'token' => 'RGAPI-ee6b8316-f25c-4355-a68a-1906afbff167'
 			]
 		]);
 		$response = json_decode($res->getBody());
@@ -60,7 +60,7 @@ class AdminController extends Controller
 		$res = $client->request('GET', $url,[
 			'query' => [
 				'filter[id]' => $id,
-				'token' => '0Aq5N1JkKrPnBI757B6z4UApAnCEcq9yhqpoh_WlhtGvHlaj-EM'
+				'token' => 'RGAPI-ee6b8316-f25c-4355-a68a-1906afbff167'
 			]
 		]);
 		$response = json_decode($res->getBody());
@@ -87,7 +87,7 @@ class AdminController extends Controller
 
 		$res = $client->request('GET', $url,[
 			'query' => [
-				'token' => '0Aq5N1JkKrPnBI757B6z4UApAnCEcq9yhqpoh_WlhtGvHlaj-EM'
+				'token' => 'RGAPI-ee6b8316-f25c-4355-a68a-1906afbff167'
 			]
 		]);
 		$response = json_decode($res->getBody());
@@ -127,7 +127,7 @@ class AdminController extends Controller
 		$res = $client->request('GET', $url,[
 			'query' => [
 				'filter[tournament_id]' => $id,
-				'token' => '0Aq5N1JkKrPnBI757B6z4UApAnCEcq9yhqpoh_WlhtGvHlaj-EM'
+				'token' => 'RGAPI-ee6b8316-f25c-4355-a68a-1906afbff167'
 			]
 		]);
 		$response = json_decode($res->getBody());
